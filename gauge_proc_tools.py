@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 
 pairs = {
@@ -171,8 +172,8 @@ def get_gauge_relative_diff(df_three_gauges, min_R):
         df_relative_diff[pair_str] = df_diff[pair_str] / (
             (df_three_gauges[id_1] + df_three_gauges[id_2]) / 2
         )
-        df_relative_diff[pair_str][df_three_gauges[id_1] < min_R] = pd.np.nan
-        df_relative_diff[pair_str][df_three_gauges[id_2] < min_R] = pd.np.nan
+        df_relative_diff[pair_str][df_three_gauges[id_1] < min_R] = np.nan
+        df_relative_diff[pair_str][df_three_gauges[id_2] < min_R] = np.nan
     return df_relative_diff
 
 
